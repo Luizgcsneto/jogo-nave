@@ -168,6 +168,20 @@ background-image:url(../imgs/apache.png);
    from { background-position:    0px; }
      to { background-position: -528px; }
 }
+
+#explosao1 {
+	width:15px;
+	height:87px;
+	position:absolute;
+
+}
+
+#explosao2 {
+	width:15px;
+	height:87px;
+	position:absolute;
+	
+}
  
  
 
