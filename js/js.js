@@ -8,6 +8,8 @@ function start() //inicio da função start
     $('#fundoGame').append('<div id="amigo" class="anima3"> </div>')
 
     var jogo = {}
+    var velocidade = 5
+    var posicaoY = parseInt(Math.random() * 334)
 
     var TECLA = {
         W: 87,
@@ -30,6 +32,7 @@ function start() //inicio da função start
     function loop(){
         moveFundo()
         moveJogador()
+        moveInimigo1()
     }
 
     function moveFundo(){
@@ -55,6 +58,15 @@ function start() //inicio da função start
                 $('#jogador').css('top',topo-10)
             }
         }
+    }
+
+    function moveInimigo1(){
+
+        posicaoX = parseInt($('#inimigo1').css('left'))
+        $('#inimigo1').css('left',posicaoX-velocidade)
+        $('#inimigo1').css('top',posicaoY)
+
+    
     }
 
 } // Fim da função start
