@@ -66,6 +66,12 @@ function start() //inicio da função start
         $('#inimigo1').css('left',posicaoX-velocidade)
         $('#inimigo1').css('top',posicaoY)
 
+        if(posicaoX <= 0){
+            posicaoY = parseInt(Math.random() * 334)
+            $('#inimigo1').css('left',694)
+            $('#inimigo1').css('top',posicaoY)
+        }
+
     
     }
 
