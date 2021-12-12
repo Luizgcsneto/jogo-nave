@@ -33,6 +33,8 @@ function start() //inicio da função start
         moveFundo()
         moveJogador()
         moveInimigo1()
+        moveInimigo2()
+        moveAmigo()
     }
 
     function moveFundo(){
@@ -73,6 +75,24 @@ function start() //inicio da função start
         }
 
     
+    }
+
+    function moveInimigo2(){
+        posicaox = parseInt($('#inimigo2').css('left'))
+        $('#inimigo2').css('left',posicaoX-3)
+
+        if(posicaoX <= 0){
+            $('#inimigo2').css('left',775)
+        }
+    }
+
+    function moveAmigo(){
+        posicaoX = parseInt($('#amigo').css('left'))
+        $('#amigo').css('left',posicaoX+2)
+
+        if(posicaoX > 906){
+            $('#amigo').css('left',0)
+        }
     }
 
 } // Fim da função start
