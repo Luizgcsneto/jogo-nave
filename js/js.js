@@ -6,11 +6,15 @@ function start() //inicio da função start
     $('#fundoGame').append('<div id="inimigo1" class="anima2"></div>')
     $('#fundoGame').append('<div id="inimigo2"></div>')
     $('#fundoGame').append('<div id="amigo" class="anima3"></div>')
+    $('#fundoGame').append('<div id="placar"></div>')
 
     var jogo = {}
     var fimDeJogo = false;
     var velocidade = 5
     var posicaoY = parseInt(Math.random() * 334)
+    var pontos = 0
+    var salvos = 0
+    var perdidos = 0
 
     var TECLA = {
         W: 87,
@@ -206,9 +210,18 @@ function start() //inicio da função start
 
        } // fim da colisao5
 
-       if(colisao6.length > 0){
-           
-       }
+       if(colisao6.length > 0){ // inicio da colisao6
+
+           amigoX = parseInt($('#amigo').css('left'))
+           amigoY = parseInt($('#amigo').css('top'))
+           explosao3(amigoX,amigoY)
+           $('#amigo').remove()
+
+           reposicionaAmigo()
+
+      
+
+       } // fim da colisão6
        
    } // fim da função colisão
 
@@ -253,6 +266,24 @@ function start() //inicio da função start
 		}
 
    } // fim da função explosão2
+
+   function explosao3(amigoX,amigoY){ // inicio da função explosao3
+
+    $('#fundoGame').append('<div id="explosao3" class="anima4"></div>')
+    $('#explosao3').css('top',amigoY)
+    $('#explosao3').css('left',amigoX)
+
+    var tempoExplosao3 = window.setInterval(resetaExplosao3,1000)
+
+        function resetaExplosao3(){ // inicio da resetaExplosao3
+            $('#explosao3').remove()
+            window.clearInterval(tempoExplosao3)
+            tempoExplosao3 = null
+        } // fim da resetaExplosao3
+
+        
+
+   } // fim da explosao3
 
    
 	function reposicionaInimigo2() {
